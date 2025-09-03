@@ -4,15 +4,12 @@ const { userRouter } = require("./routes/user.routes");
 const { adminRouter } = require("./routes/admin.routes");
 const { courseRouter } = require("./routes/course.routes");
 const connectDb = require("./config/db.config");
-
+app.use(express.json());
 connectDb();
-
-
 
 const PORT = process.env.PORT;
 
-app.use(express.json());
-console.log("HEllo");
+
 app.use("/user", userRouter);
 app.use("/admin", adminRouter);
 app.use("/course", courseRouter);
