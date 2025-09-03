@@ -1,8 +1,8 @@
 const express = require("express");
 const app = express();
-const { userRouter } = require("./routes/user");
-const { adminRouter } = require("./routes/admin");
-const { courseRouter } = require("./routes/course");
+const { userRouter } = require("./routes/user.routes");
+const { adminRouter } = require("./routes/admin.routes");
+const { courseRouter } = require("./routes/course.routes");
 require("dotenv").config();
 
 const PORT = process.env.PORT;
