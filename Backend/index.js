@@ -3,13 +3,16 @@ const app = express();
 const { userRouter } = require("./routes/user.routes");
 const { adminRouter } = require("./routes/admin.routes");
 const { courseRouter } = require("./routes/course.routes");
-require("dotenv").config();
+const connectDb = require("./config/db.config");
+
+connectDb();
+
+
 
 const PORT = process.env.PORT;
 
 app.use(express.json());
-console.log(
-  "HEllo");
+console.log("HEllo");
 app.use("/user", userRouter);
 app.use("/admin", adminRouter);
 app.use("/course", courseRouter);
